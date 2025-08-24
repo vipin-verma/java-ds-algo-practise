@@ -2,6 +2,7 @@ package questions;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 public class LRUCache {
      private final  int capacity ;
@@ -61,8 +62,8 @@ public class LRUCache {
 
      public int get (int key )
      {
-         if (!cache.containsKey(key)) return -1;
-         Node node = cache.get(key);
+         if (!cache.containsKey(Optional.of(key))) return -1;
+         Node node = cache.get(Optional.of(key));
          dll.remove(node);
          dll.addFirst(node);
          return node.value ;
@@ -70,8 +71,8 @@ public class LRUCache {
      }
 
      public void put (int key , int value){
-        if (cache.containsKey(key)){
-            Node node = cache.get(key);
+        if (cache.containsKey(Optional.of(key))){
+            Node node = cache.get(Optional.of(key));
             node.value = value ;
             dll.remove(node);
             dll.addFirst(node);
@@ -79,12 +80,12 @@ public class LRUCache {
                 if (cache.size() == capacity )
                 {
                     Node last = dll.removeLast();
-                    cache.remove(last.key);
+                    cache.remove(Optional.of(last.key));
                 }
 
                 Node newNode = new Node(key , value );
                 dll.addFirst(newNode);
-                cache.put(key, newNode);
+                cache.put(Integer.valueOf(key), newNode);
 
         }
 
