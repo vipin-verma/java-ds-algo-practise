@@ -1,0 +1,38 @@
+package leetcode;
+
+
+
+public class TrappingRainWater {
+    public int trap(int[] height) {
+        int left = 0, right = height.length - 1;
+        int leftMax = 0, rightMax = 0;
+        int trappedWater = 0;
+
+        while (left < right) {
+            if (height[left] < height[right]) {
+                if (height[left] >= leftMax) {
+                    leftMax = height[left];
+                } else {
+                    trappedWater += leftMax - height[left];
+                }
+                left++;
+            } else {
+                if (height[right] >= rightMax) {
+                    rightMax = height[right];
+                } else {
+                    trappedWater += rightMax - height[right];
+                }
+                right--;
+            }
+        }
+        return trappedWater;
+    }
+
+    // Example test case
+    public static void main(String[] args) {
+        TrappingRainWater solver = new TrappingRainWater();
+        int[] height = {3, 0, 2, 0, 4};
+        int result = solver.trap(height);
+        System.out.println("Trapped rainwater: " + result);
+    }
+}
