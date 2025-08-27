@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 public class FunctionalProgrammingExamples {
 
     public static void main(String[] args) {
-        // Lambda Expressions Example
+        // LambdaEaxmples Expressions Example
         lambdaExpressions();
 
         // Functional Interfaces Examples
@@ -33,10 +33,10 @@ public class FunctionalProgrammingExamples {
      * Demonstrates the use of lambda expressions in Java.
      */
     private static void lambdaExpressions() {
-        System.out.println("Lambda Expressions Example:");
+        System.out.println("LambdaEaxmples Expressions Example:");
 
         // Example of a lambda expression to implement Runnable
-        Runnable runnable = () -> System.out.println("Lambda Runnable running");
+        Runnable runnable = () -> System.out.println("LambdaEaxmples Runnable running");
         new Thread(runnable).start();
 
         // Using a lambda expression with a custom functional interface
