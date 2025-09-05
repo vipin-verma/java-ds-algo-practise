@@ -12,6 +12,9 @@ public class AllNumberStartWith1 {
 
     /*    List<Integer> ans = list.stream()
                 .map(n -> )*/
+        list.stream()
+                .filter(n -> String.valueOf(n).startsWith("1"))
+                .forEach(System.out::println);
     }
 }
 
