@@ -44,7 +44,7 @@ public class NoOfPlatforms {
             while (i < n && j < n)
             {
 
-                if (arr[i] <= dep [i]){
+                if (arr[i] <= dep [j]){
 
                     platformNeeded++ ;
                     i++;
@@ -53,8 +53,8 @@ public class NoOfPlatforms {
 
                 }else {
 
-                    platformNeeded --;
-                    j--;
+                    platformNeeded--;
+                    j++;
 
                 }
             }
