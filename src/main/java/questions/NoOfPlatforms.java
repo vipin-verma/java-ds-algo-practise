@@ -1,21 +1,13 @@
-﻿package questions;
+package questions;
 
 import java.util.Arrays;
+import java.util.Map;
 
-/**
- * Calculates the minimum number of railway platforms required so that no train has to wait.
- */
 public class NoOfPlatforms {
 
+
+
     public static void main(String[] args) {
-        int[][] simpleTrains = {
-                {900, 930},  // Train A stays from 09:00 to 09:30
-                {915, 1000}, // Train B arrives while A is still there
-                {940, 1200}  // Train C arrives after B leaves, so still 2 platforms needed
-        };
-
-        System.out.println("Simple example platforms = " + findMinPlatforms(simpleTrains));
-
         int[][] trains = {
                 {900, 910},
                 {940, 1200},
@@ -29,35 +21,46 @@ public class NoOfPlatforms {
     }
 
     private static int findMinPlatforms(int[][] trains) {
-        int n = trains.length;
 
-        int[] arrivals = new int[n];
-        int[] departures = new int[n];
+            int n = trains.length;
 
-        for (int i = 0; i < n; i++) {
-            arrivals[i] = trains[i][0];
-            departures[i] = trains[i][1];
-        }
 
-        Arrays.sort(arrivals);
-        Arrays.sort(departures);
+            int [] arr = new int [n];
+            int [] dep = new int [n];
 
-        int arrivalIndex = 0;
-        int departureIndex = 0;
-        int platformsInUse = 0;
-        int maxPlatforms = 0;
+            for (int i =0 ; i < n ; i++){
+                arr [i] = trains [i][0];
+                dep [i] = trains [i][1];
 
-        while (arrivalIndex < n && departureIndex < n) {
-            if (arrivals[arrivalIndex] <= departures[departureIndex]) {
-                platformsInUse++;
-                maxPlatforms = Math.max(maxPlatforms, platformsInUse);
-                arrivalIndex++;
-            } else {
-                platformsInUse--;
-                departureIndex++;
             }
-        }
 
-        return maxPlatforms;
+        Arrays.sort(arr);
+            Arrays.sort(dep);
+
+            int i =0, j=0 ;
+            int platformNeeded = 0,  maxPLatforms = 0;
+
+
+            while (i < n && j < n)
+            {
+
+                if (arr[i] <= dep [j]){
+
+                    platformNeeded++ ;
+                    i++;
+                    maxPLatforms = Math.max(maxPLatforms , platformNeeded);
+
+
+                }else {
+
+                    platformNeeded--;
+                    j++;
+
+                }
+            }
+
+            return maxPLatforms;
     }
+
+
 }
