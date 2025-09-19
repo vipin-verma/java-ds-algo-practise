@@ -1,12 +1,9 @@
-﻿package questions;
+package questions;
 
 import java.util.ArrayDeque;
 import java.util.Queue;
 
-/**
- * Breadth-first search over a 2D matrix: start at the top-left cell and visit every reachable "1".
- */
-public class SimpleBfs {
+public class Simplebfs1 {
 
     private static final int[][] GRID = {
             {1, 1, 0, 0},
@@ -62,4 +59,5 @@ public class SimpleBfs {
     public static void main(String[] args) {
         bfsFrom(0, 0);
     }
+
 }

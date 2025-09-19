@@ -1,12 +1,8 @@
-﻿package questions;
+package questions;
 
 import java.util.Arrays;
 
-/**
- * Shows how prefix sums answer range-sum queries quickly and how a difference array
- * applies many range updates in O(1) each before a final sweep.
- */
-public class PrefixSumDifference {
+public class PrefixSumDifference1 {
 
     private static int[] buildPrefix(int[] nums) {
         int[] prefix = new int[nums.length + 1];

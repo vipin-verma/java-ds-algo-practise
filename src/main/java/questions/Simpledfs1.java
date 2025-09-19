@@ -1,11 +1,6 @@
-﻿package questions;
+package questions;
 
-/**
- * Depth-first search on a 2D grid to find the largest connected region of 1s.
- * Equivalent problem statement: Given a binary matrix, return the size of the
- * biggest "island" of adjacent land cells where adjacency is four-directional.
- */
-public class SimpleDfs {
+public class Simpledfs1 {
 
     private static final int[][] GRID = {
             {1, 1, 0, 0, 0},
@@ -66,4 +61,5 @@ public class SimpleDfs {
         int maxIsland = largestIsland();
         System.out.println("Largest island size = " + maxIsland);
     }
+
 }
