@@ -1,4 +1,4 @@
-package javaBasics;
+package javaConcepts;
 
 import java.util.*;
 

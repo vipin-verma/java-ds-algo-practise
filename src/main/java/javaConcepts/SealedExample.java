@@ -1,4 +1,4 @@
-package javaBasics;
+package javaConcepts;
 
 // Base sealed class
 sealed abstract class Shape permits Circle, Rectangle, Square {

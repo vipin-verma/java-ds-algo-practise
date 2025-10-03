@@ -1,4 +1,4 @@
-package javaBasics;
+package javaConcepts;
 
 public class RecordExample {
     public static void main(String[] args) {
